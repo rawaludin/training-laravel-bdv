@@ -12,4 +12,10 @@ class BlogController extends Controller
         $posts = Post::paginate(5);
         return view('blogs.index', compact('posts'));
     }
+
+    public function show($id)
+    {
+        $post = Post::find($id);
+        return view('blogs.show', compact('post'));
+    }
 }

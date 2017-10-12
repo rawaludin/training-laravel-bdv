@@ -12,6 +12,7 @@
 */
 Route::get('/halo/{nama?}', 'HaloController@index');
 Route::get('/', 'BlogController@index');
+Route::get('/posts/{posts}', 'BlogController@show');
 
 Auth::routes();
 
