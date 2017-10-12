@@ -13,5 +13,10 @@
         </div>
     </div>
     @endforeach
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            {{ $posts->links() }}
+        </div>
+    </div>
 </div>
 @endsection
