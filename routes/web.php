@@ -14,6 +14,9 @@ Route::get('/halo/{nama?}', 'HaloController@index');
 Route::get('/', 'BlogController@index');
 Route::get('/posts/{posts}', 'BlogController@show');
 
+Route::prefix('manage')->group(function() {
+    Route::resource('posts', 'PostController');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
