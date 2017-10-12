@@ -11,9 +11,7 @@
 |
 */
 Route::get('/halo/{nama?}', 'HaloController@index');
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BlogController@index');
 
 Auth::routes();
 
