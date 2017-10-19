@@ -15,7 +15,13 @@
             <tr>
                 <th scope="row">{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
-                <td>edit | hapus | lihat</td>
+            <td>
+                {!! Form::model($post, ['route' => ['posts.destroy', $post->id], 'method' => 'delete', 'class' => 'form-inline'] ) !!}
+                    <a href="/manage/posts/{{ $post->id }}/edit">ubah</a> |
+                    {!! Form::submit('hapus', ['class'=>'btn btn-xs btn-danger']) !!}
+                    | <a href="/article/{{$post->id}}">lihat</a>
+                {!! Form::close()!!}
+            </td>
             </tr>
         @endforeach
        </tbody>

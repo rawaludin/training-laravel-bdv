@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        {!! Form::open(['route' => 'posts.store']) !!}
+        {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'put']) !!}
             @include('posts._form')
 		{!! Form::close() !!} 
     </div>
